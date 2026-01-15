@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marketing Mix (4Ps) Case Study – Amal Jyothi College of Engineering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/7/7e/Amal_Jyothi_College_of_Engineering_logo.png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #0a192f, #112d4e, #1b3a57);
+            color: #eaeaea;
+            line-height: 1.7;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: radial-gradient(circle at center, #112d4e, #0a192f);
+            padding: 60px 20px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #00e5ff;
+            letter-spacing: 1px;
+        }
+
+        header h3 {
+            color: #80deea;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            max-width: 900px;
+            margin: auto;
+            color: #cfd8dc;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: #00e5ff;
+            text-decoration: none;
+            margin: 8px 20px;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #00e5ff;
+            left: 0;
+            bottom: -4px;
+            transition: 0.4s ease;
+        }
+
+        nav a:hover {
+            color: #80deea;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 70px 10%;
+            background: rgba(255,255,255,0.03);
+            margin: 40px auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #00e5ff;
+            text-transform: uppercase;
+            border-left: 5px solid #00e5ff;
+            padding-left: 15px;
+        }
+
+        section p {
+            font-size: 1rem;
+            color: #e0f7fa;
+        }
+
+        section ul {
+            margin-left: 25px;
+            color: #cfd8dc;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 14px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: #80deea;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #3a506b;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+        }
+
+        th {
+            background: #102a43;
+            color: #00e5ff;
+        }
+
+        td {
+            background: rgba(255,255,255,0.05);
+            color: #eaeaea;
+        }
+
+        tr:hover td {
+            background: rgba(0,229,255,0.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 420px;
+            border-radius: 16px;
+            margin-top: 20px;
+            border: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        footer {
+            background: #000;
+            padding: 40px;
+            text-align: center;
+            color: #aaa;
+            margin-top: 60px;
+            border-top: 2px solid #00e5ff;
+        }
+
+        footer a {
+            color: #00e5ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #80deea;
+            text-decoration: underline;
+        }
+
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #00e5ff;
+            color: #0a192f;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            display: none;
+            transition: all 0.4s ease;
+        }
+
+        #backToTop:hover {
+            transform: scale(1.1);
+            background: #80deea;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            section { padding: 50px 6%; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Marketing Mix (4Ps) Case Study</h1>
+    <h3>Amal Jyothi College of Engineering, Kanjirappally</h3>
+    <p>
+        This webpage presents a detailed marketing case study of Amal Jyothi College of Engineering
+        using the 4Ps framework — Product, Price, Place, and Promotion — combining marketing analysis
+        with modern web design.
+    </p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#product">Product</a>
+    <a href="#price">Price</a>
+    <a href="#place">Place</a>
+    <a href="#promotion">Promotion</a>
+    <a href="#analysis">Analysis</a>
+    <a href="#conclusion">Conclusion</a>
+</nav>
+
+<section id="home">
+    <h2>Introduction</h2>
+    <p>
+        Higher education today operates in a highly competitive marketplace. Colleges must no longer
+        rely solely on academic reputation; they must strategically design offerings, pricing, service
+        delivery, and communication to attract and retain students. This case study evaluates how
+        Amal Jyothi College of Engineering applies the Marketing Mix (4Ps) to build its institutional brand
+        and deliver value to students.
+    </p>
+    <img src="https://career.ajce.in/home/admimages/5adm.jpg" alt="AJCE Campus">
+    <p class="image-caption">Amal Jyothi College of Engineering – Campus View</p>
+</section>
+
+<section id="product">
+    <h2>Product – Academic & Non-Academic Offerings</h2>
+    <p>
+        The “product” of a college is the total educational experience offered to students. Amal Jyothi
+        College of Engineering provides a balanced mix of academic excellence, infrastructure, and
+        student-centric services.
+    </p>
+
+    <ul>
+        <li><strong>Academic Programs:</strong> B.Tech, M.Tech, MCA, MBA, PhD programs with industry-aligned curriculum.</li>
+        <li><strong>Faculty Quality:</strong> Experienced professors, research scholars, mentoring systems.</li>
+        <li><strong>Infrastructure:</strong> Smart classrooms, advanced labs, digital library, hostels, sports facilities.</li>
+        <li><strong>Student Services:</strong> Placement cell, counseling, innovation hubs, clubs, NSS, IEEE chapters.</li>
+        <li><strong>USPs:</strong> NBA accreditation, strong placement record, value-based education.</li>
+    </ul>
+
+    <img src="https://www.ajce.in/ch/images/_MG_4515.jpg" alt="Engineering Laboratories">
+    <p class="image-caption">Modern Engineering Laboratories at Amal Jyothi College of Engineering</p>
+
+    <!-- Added extra college laboratory image -->
+    <img src="https://cache.careers360.mobi/media/presets/720X480/colleges/social-media/media-gallery/5021/2019/3/28/IT%20Lab%20of%20Amal%20Jyothi%20College%20of%20Engineering%20Kottayam_IT-Lab.png" alt="College Laboratory">
+    <p class="image-caption">State-of-the-art Computer and Electronics Laboratory</p>
+</section>
+
+<section id="price">
+    <h2>Price – Fee Structure & Value Perception</h2>
+    <p>
+        Amal Jyothi adopts a competitive pricing strategy that balances quality education with affordability.
+        Fees are aligned with state and management norms while offering value-added services.
+    </p>
+
+    <table>
+        <tr><th>Component</th><th>Approximate Cost (INR)</th></tr>
+        <tr><td>Tuition Fee (Annual)</td><td>₹50,000 – ₹1,00,000</td></tr>
+        <tr><td>Hostel & Mess</td><td>₹50,000 – ₹70,000</td></tr>
+        <tr><td>Other Charges</td><td>₹10,000 – ₹15,000</td></tr>
+    </table>
+
+    <p>
+        Scholarships, government fee concessions, and installment options improve affordability.
+        Students generally perceive the pricing as justified given placements, infrastructure, and exposure.
+    </p>
+</section>
+
+<section id="place">
+    <h2>Place – Location & Service Delivery</h2>
+    <p>
+        Amal Jyothi is located in Kanjirappally, Kerala, offering a calm academic environment with good
+        connectivity to major towns. The physical and digital delivery of education is well-structured.
+    </p>
+
+    <ul>
+        <li>Accessible campus with transport facilities</li>
+        <li>Well-organized classrooms and labs</li>
+        <li>LMS, online portals, hybrid learning support</li>
+        <li>Student-friendly schedules and digital access</li>
+    </ul>
+
+    <img src="https://www.ajce.in/lib/images/lib2.jpg" alt="College Library">
+    <p class="image-caption">College Central Library and Study Area</p>
+</section>
+
+<section id="promotion">
+    <h2>Promotion – Communication & Branding</h2>
+    <p>
+        Promotion plays a crucial role in shaping perception. The college uses both traditional and
+        digital channels to reach students and parents.
+    </p>
+
+    <ul>
+        <li>Official website and admission portals</li>
+        <li>Social media platforms (Instagram, YouTube, Facebook)</li>
+        <li>Educational fairs, school outreach programs</li>
+        <li>Word-of-mouth through alumni and parents</li>
+    </ul>
+
+    <iframe src="https://www.youtube.com/embed/0R5M8QkK1xg" title="Campus Tour"></iframe>
+</section>
+
+<section id="analysis">
+    <h2>Analysis – Strengths & Gaps</h2>
+
+    <h4 style="color:#00e5ff;">Strengths</h4>
+    <ul>
+        <li>Strong academic credibility and placements</li>
+        <li>Balanced pricing strategy</li>
+        <li>Consistent branding and reputation</li>
+    </ul>
+
+    <h4 style="color:#00e5ff;">Weaknesses / Gaps</h4>
+    <ul>
+        <li>Limited national-level digital marketing</li>
+        <li>Lower visibility outside Kerala</li>
+        <li>Scope for stronger alumni branding</li>
+    </ul>
+</section>
+
+<section id="conclusion">
+    <h2>Suggestions & Conclusion</h2>
+
+    <h4 style="color:#00e5ff;">Suggestions</h4>
+    <ul>
+        <li>Strengthen digital storytelling through student success videos</li>
+        <li>Expand online programs and certifications</li>
+        <li>Leverage alumni as brand ambassadors</li>
+    </ul>
+
+    <p>
+        Overall, Amal Jyothi College of Engineering demonstrates an effective application of the
+        Marketing Mix. Its strong product offering, fair pricing, accessible location, and steady promotion
+        create a solid institutional brand. With minor strategic enhancements, the college can further
+        strengthen its competitive position in the higher education market.
+    </p>
+</section>
+
+<footer>
+    <p>
+        Official Website:
+        <a href="https://www.amaljyothi.ac.in" target="_blank">www.amaljyothi.ac.in</a>
+    </p>
+    <p>Marketing Mix Case Study | Student Perspective</p>
+</footer>
+
+<button id="backToTop" title="Go to top">↑</button>
+
+<script>
+    // Back to top button
+    const backToTop = document.getElementById("backToTop");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
+    };
+    backToTop.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Section reveal on scroll
+    const sections = document.querySelectorAll('section');
+    const revealOnScroll = () => {
+        sections.forEach(sec => {
+            const rect = sec.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+            if (rect < screenHeight - 100) sec.classList.add('visible');
+        });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+</script>
+
+</body>
+</html>
